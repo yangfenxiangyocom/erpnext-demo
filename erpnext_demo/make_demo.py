@@ -350,9 +350,9 @@ def add_random_children(doc, template, rows, randomize, unique=None):
 
 		if unique:
 			if not doc.get(d["parentfield"], {unique:d[unique]}):
-				doc.append(d)
+				doc.append(d["parentfield"], d)
 		else:
-			doc.append(d)
+			doc.append(d["parentfield"], d)
 
 def get_random(doctype, filters=None):
 	condition = []
@@ -463,3 +463,9 @@ def import_data(dt, submit=False, overwrite=False):
 		print "Importing", doctype.replace("_", " "), "..."
 		import_doc(os.path.join(os.path.dirname(__file__), "demo_docs", doctype+".csv"), submit=submit, overwrite=overwrite)
 
+<<<<<<< HEAD
+=======
+		# doctype = doctype.replace("_", " ").title()
+		# print "\n".join(frappe.db.sql_list('select name from `tab{}`'.format(doctype))).encode("utf-8")
+		# print
+>>>>>>> 65a2b8455b58da17cb10a6fe8c3c9de526bc432b
