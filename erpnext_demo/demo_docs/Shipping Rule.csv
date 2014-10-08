@@ -18,6 +18,6 @@ Mandatory:,Yes,Yes,Yes,Yes,Yes,,Yes,Yes,Yes,No,,Yes,Yes
 Type:,Data (text),Data,Link,Link,Link,,Data,Float,Currency,Float,,Data,Link
 Info:,,,Valid Company,Valid Account,Valid Cost Center,,Leave blank for new records,,,,,Leave blank for new records,Valid Territory
 Start entering data below this line,,,,,,,,,,,,,
-,"""Worldwide Shipping""",Worldwide Shipping,Wind Power LLC,Shipping Charges - WP,Main - WP,,,0,10,500,,,All Territories
+,"""跨国运输""",跨国运输,尚腾进出口制造有限公司,运输费用 - WP,主要的 - WP,,,0,10,500,,,所有的区域(分管区域)
 ,,,,,,,,500,15,"1,000",,,
 ,,,,,,,,"1,000",20,0,,,

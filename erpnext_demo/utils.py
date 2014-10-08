@@ -1,3 +1,4 @@
+#coding=utf-8
 # Copyright (c) 2013, Web Notes Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
@@ -15,15 +16,15 @@ def on_login(login_manager):
 			cmd = frappe.conf.demo_notify_cmd or "erpnext.templates.utils.send_message"
 			r = requests.post(url, data={
 				"cmd": cmd,
-				"subject":"Logged into Demo",
+				"subject":"登陆进示例网站",
 				"sender": frappe.form_dict.lead_email,
-				"message": "via demo.frappecloud.com"
+				"message": "经由demo@erpboost.com"
 			})
 
 def get_startup_js():
-	return """frappe.ui.toolbar.show_banner('You are using ERPNext Demo. '
-		+'To start your own ERPNext Trial, <a href="https://frappecloud.com/plans" '
-		+'target="_blank">click here</a>');"""
+	return """frappe.ui.toolbar.show_banner('您在使用ERP Boost的示例程序. '
+		+'开始使用ERP Boost, <a href="http://www.erpboost.com/product-price.html" '
+		+'target="_blank">点击这里</a>');"""
 
 def check_if_not_setup():
 	if frappe.db.sql("""select name from tabCompany"""):
@@ -54,8 +55,8 @@ def make_demo_user():
 			})
 
 	# make demo user
-	if frappe.db.exists("User", "demo@frappecloud.com"):
-		frappe.delete_doc("User", "demo@frappecloud.com")
+	if frappe.db.exists("User", "demo@erpboost.com"):
+		frappe.delete_doc("User", "demo@erpboost.com")
 
 	# add User Type property setter
 	user_types = frappe.get_meta("User").get_field("user_type").options
@@ -64,20 +65,20 @@ def make_demo_user():
 		"doctype": "User",
 		"fieldname": "user_type",
 		"property": "options",
-		"value": (user_types or "") + "\nERPNext Demo",
+		"value": (user_types or "") + "\nERP Boost Demo",
 		"property_type": "Text"
 	})
 
 	p = frappe.new_doc("User")
-	p.email = "demo@frappecloud.com"
+	p.email = "demo@erpboost.com"
 	p.first_name = "Demo"
 	p.last_name = "User"
 	p.enabled = 1
-	p.user_type = "ERPNext Demo"
+	p.user_type = "ERP Boost Demo"
 	p.insert()
 	add_roles(p)
 	p.save()
-	_update_password("demo@frappecloud.com", "demo")
+	_update_password("demo@erpboost.com", "demo")
 
 	# only read for newsletter
 	frappe.db.sql("""update `tabDocPerm` set `write`=0, `create`=0, `cancel`=0
@@ -99,5 +100,5 @@ def make_demo_login_page():
 	frappe.db.commit()
 
 def validate_reset_password(doc, method):
-	if doc.name == "demo@frappecloud.com":
-		throw(_("You cannot reset the password of {0}").format(doc.first_name + " " + doc.last_name))
+	if doc.name == "demo@erpboost.com":
+		throw(_("不能为其重设密码: {0}").format(doc.first_name + " " + doc.last_name))

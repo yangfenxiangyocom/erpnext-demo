@@ -18,7 +18,7 @@ Mandatory:,Yes,Yes,Yes,Yes,Yes,No,No,No,No,No,No,No,No,,Yes,Yes,No,No,,Yes,Yes,N
 Type:,Data (text),Link,Select,Date,Select,Data,Select,Select,Select,Date,Currency,Currency,Currency,,Data,Link,Currency,Check,,Data,Link,Currency,Check
 Info:,,Valid Employee,"One of: Yes, No",,Valid Company,,Valid Branch,Valid Designation,Valid Department,,,,,,Leave blank for new records,Valid Earning Type,,0 or 1,,Leave blank for new records,Valid Deduction Type,,0 or 1
 Start entering data below this line,,,,,,,,,,,,,,,,,,,,,,,
-,,EMP/0001,Yes,2013-08-06,Wind Power LLC,Dikman Shervashidze Shervashidze,,,,,5000,400,4600,,,Basic,5000,,,,Income Tax,400,
-,,EMP/0002,Yes,2013-08-06,Wind Power LLC,Zukutakitoteka,,,,,6700,400,6300,,,Basic,6700,,,,Income Tax,400,
-,,EMP/0003,Yes,2013-08-06,Wind Power LLC,Hatsue Kashiwagi,,,,,3400,400,3000,,,Basic,3400,,,,Income Tax,400,
-,,EMP/0004,Yes,2013-08-06,Wind Power LLC,Nuran Verkleij,,,,,6990,566,6424,,,Basic,6990,,,,Income Tax,566,
+,,EMP/0001,Yes,2013-08-06,尚腾进出口制造有限公司,Dikman Shervashidze Shervashidze,,,,,5000,400,4600,,,基本的,5000,,,,所得税,400,
+,,EMP/0002,Yes,2013-08-06,尚腾进出口制造有限公司,Zukutakitoteka,,,,,6700,400,6300,,,基本的,6700,,,,所得税,400,
+,,EMP/0003,Yes,2013-08-06,尚腾进出口制造有限公司,Hatsue Kashiwagi,,,,,3400,400,3000,,,基本的,3400,,,,所得税,400,
+,,EMP/0004,Yes,2013-08-06,尚腾进出口制造有限公司,Nuran Verkleij,,,,,6990,566,6424,,,基本的,6990,,,,所得税,566,
