@@ -1,11 +1,12 @@
+# coding=utf-8
 app_name = "erpnext_demo"
-app_title = "ERPNext Demo"
+app_title = "ERP Boost Demo"
 app_publisher = "Web Notes Technlogies"
-app_description = "Demo Builder"
+app_description = "示例程序"
 app_icon = "icon-coffee"
 app_color = "#d6cec3"
-app_email = "info@erpnext.com"
-app_url = "http://erpnext.org"
+app_email = "support@erpboost.com"
+app_url = "http://www.erpboost.com"
 app_version = "0.0.1"
 hide_in_installer = True
 

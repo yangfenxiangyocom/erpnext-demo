@@ -3,7 +3,7 @@
   "__islocal": 1,
   "_comments": null,
   "_user_tags": null,
-  "company": "Wind Power LLC",
+  "company": "尚腾进出口制造有限公司",
   "default_customer_group": "Individual",
   "default_territory": "United States",
   "docstatus": 0,
@@ -59,7 +59,7 @@
     "owner": "Administrator",
     "parentfield": "shipping_rules",
     "parenttype": "Shopping Cart Settings",
-    "shipping_rule": "Worldwide Shipping"
+    "shipping_rule": "跨国运输"
    }
   ]
  }

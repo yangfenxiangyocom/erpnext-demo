@@ -1,3 +1,4 @@
+#coding=utf-8
 # Copyright (c) 2013, Web Notes Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
@@ -11,14 +12,14 @@ from frappe.core.page.data_import_tool.data_import_tool import import_doc
 # fix price list
 # fix fiscal year
 
-company = "Wind Power LLC"
+company = "尚腾进出口制造有限公司"
 company_abbr = "WP"
-country = "United States"
-currency = "USD"
-time_zone = "America/New_York"
+country = "China"
+currency = "CNY"
+time_zone = "Asia/Chongqing"
 start_date = None
 runs_for = None
-bank_name = "Citibank"
+bank_name = "中国工商银行"
 prob = {
 	"default": { "make": 0.6, "qty": (1,5) },
 	"Sales Order": { "make": 0.4, "qty": (1,3) },
@@ -50,6 +51,9 @@ def setup():
 	make_shipping_rules()
 	if "shopping_cart" in frappe.get_installed_apps():
 		enable_shopping_cart()
+
+	frappe.db.set_default("lang", 'zh-cn')
+	frappe.local.lang = 'zh-cn'
 
 	frappe.clear_cache()
 
@@ -181,7 +185,7 @@ def run_stock(current_date):
 			dn.fiscal_year = cstr(current_date.year)
 			for d in dn.get("delivery_note_details"):
 				if not d.expense_account:
-					d.expense_account = "Cost of Goods Sold - {}".format(company_abbr)
+					d.expense_account = "销货成本 - {}".format(company_abbr)
 
 			dn.insert()
 			try:
@@ -248,7 +252,7 @@ def run_manufacturing(current_date):
 	ppt = frappe.get_doc("Production Planning Tool", "Production Planning Tool")
 	ppt.company = company
 	ppt.use_multi_level_bom = 1
-	ppt.purchase_request_for_warehouse = "Stores - {}".format(company_abbr)
+	ppt.purchase_request_for_warehouse = "物料 - {}".format(company_abbr)
 	ppt.run_method("get_open_sales_orders")
 	ppt.run_method("get_items_from_so")
 	ppt.run_method("raise_production_order")
@@ -258,7 +262,7 @@ def run_manufacturing(current_date):
 	# submit production orders
 	for pro in frappe.db.get_values("Production Order", {"docstatus": 0}, "name"):
 		b = frappe.get_doc("Production Order", pro[0])
-		b.wip_warehouse = "Work in Progress - WP"
+		b.wip_warehouse = "在制品 - WP"
 		b.submit()
 		frappe.db.commit()
 
@@ -393,8 +397,8 @@ def complete_setup():
 	setup_account({
 		"first_name": "Test",
 		"last_name": "User",
-		"email": "test_demo@frappecloud.com",
-		"company_tagline": "Wind Mills for a Better Tomorrow",
+		"email": "test_demo@erpboost.com",
+		"company_tagline": "为了更好的未来",
 		"password": "test",
 		"fy_start_date": "2014-01-01",
 		"fy_end_date": "2014-12-31",
@@ -404,7 +408,7 @@ def complete_setup():
 		"currency": currency,
 		"timezone": time_zone,
 		"country": country,
-		"language": "english"
+		"language": "zh-cn"
 	})
 
 	# home page should always be "start"
@@ -412,11 +416,14 @@ def complete_setup():
 	website_settings.home_page = "start"
 	website_settings.save()
 
+	frappe.db.set_default("lang", 'en')
+	frappe.local.lang = 'en'
+
 	import_data("Fiscal_Year")
 
 def show_item_groups_in_website():
 	"""set show_in_website=1 for Item Groups"""
-	products = frappe.get_doc("Item Group", "Products")
+	products = frappe.get_doc("Item Group", "产品")
 	products.show_in_website = 1
 	products.save()
 
@@ -442,7 +449,7 @@ def make_bank_account():
 		"account_name": bank_name,
 		"account_type": "Bank",
 		"group_or_ledger": "Ledger",
-		"parent_account": "Bank Accounts - " + company_abbr,
+		"parent_account": "银行账户 - " + company_abbr,
 		"company": company
 	}).insert()
 

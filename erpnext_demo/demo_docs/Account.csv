@@ -18,5 +18,5 @@ Mandatory:,Yes,Yes,Yes,Yes,No,No,No,No,No,No
 Type:,Data (text),Data,Select,Link,Data,Link,Select,Float,Select,Check
 Info:,,,"One of: Ledger, Group",Valid Company,"One of: Balance Sheet, Profit and Loss",Valid Account,"One of: Bank, Cash, Tax, Chargeable, Warehouse, Receivable, Payable, Equity, Fixed Asset, Cost of Goods Sold, Expense Account, Income Account",,"One of: No, Yes",0 or 1
 Start entering data below this line,,,,,,,,,,
-,"""Shipping Charges - WP""",Shipping Charges,Ledger,Wind Power LLC,Profit and Loss,Stock Expenses - WP,Tax,,No,1
-,"""Input VAT - WP""",Input VAT,Ledger,Wind Power LLC,Balance Sheet,Tax Assets - WP,Tax,4,No,1
+,"""运输费用 - WP""",运输费用,Ledger,尚腾进出口制造有限公司,损益,库存费用 - WP,Tax,,No,1
+,"""Input VAT - WP""",Input VAT,Ledger,尚腾进出口制造有限公司,资产负债表,税资产 - WP,Tax,4,No,1

@@ -18,4 +18,4 @@ Mandatory:,Yes,Yes,Yes,No,,Yes,Yes,Yes,Yes,Yes,No,No,No,No,No,,Yes,Yes
 Type:,Data (text),Data,Link,Check,,Data,Select,Small Text,Link,Float,Data,Link,Currency,Currency,Check,,Data,Link
 Info:,,,Valid Company,0 or 1,,Leave blank for new records,"One of: Actual, On Net Total, On Previous Row Amount, On Previous Row Total",,Valid Account,,,Valid Cost Center,,,0 or 1,,Leave blank for new records,Valid Territory
 Start entering data below this line,,,,,,,,,,,,,,,,,,
-,"""Demo Tax Master""",Demo Tax Master,Wind Power LLC,0,,,On Net Total,VAT @ 4%,Input VAT - WP,4,,Main - WP,,,,,,All Territories
+,"""Demo Tax Master""",Demo Tax Master,尚腾进出口制造有限公司,0,,,On Net Total,VAT @ 4%,Input VAT - WP,4,,主要的 - WP,,,,,,所有的区域(分管区域)
