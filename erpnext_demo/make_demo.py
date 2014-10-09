@@ -301,8 +301,8 @@ def make_stock_entry_from_pro(pro_id, purpose, current_date):
 		st.posting_date = current_date
 		st.fiscal_year = cstr(current_date.year)
 		for d in st.get("mtn_details"):
-			d.expense_account = "Stock Adjustment - " + company_abbr
-			d.cost_center = "Main - " + company_abbr
+			d.expense_account = "库存调整 - " + company_abbr
+			d.cost_center = "主要的 - " + company_abbr
 		st.insert()
 		frappe.db.commit()
 		st.submit()
