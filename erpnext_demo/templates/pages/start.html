@@ -1,3 +1,20 @@
+<script type="text/javascript">
+	var ieVersion = (function() {
+	    var v = 3,
+	        div = document.createElement('div'),
+	        all = div.getElementsByTagName('i');
+	    while (
+	        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+	        all[0]
+	    );  
+	    return v > 4 ? v : false;
+	})();
+	
+	if(ieVersion && ieVersion < 9)
+	{	
+		location.href="/assets/frappe/html/noieunder9.html";
+	}
+</script>
 {% block script %}
 	{% include "templates/includes/start.js" %}
 {% endblock %}
@@ -20,6 +37,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
+
+
 
 <div class="container" style="max-width: 800px;">
 	<div class="row" style="margin-top: 100px;">
