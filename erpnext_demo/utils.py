@@ -23,8 +23,8 @@ def on_login(login_manager):
 
 def get_startup_js():
 	return """frappe.ui.toolbar.show_banner('您正在使用博实ERP的示例程序. '
-		+'有任何疑问?, <a style="color:red" href="http://qiao.baidu.com/v3/?module=default&amp;controller=im&amp;action=index&amp;ucid=7872376&amp;type=n&amp;siteid=5697239" '
-		+'target="_blank">在线咨询</a>');"""
+		+'有任何疑问? <a style="color:red" href="http://qiao.baidu.com/v3/?module=default&amp;controller=im&amp;action=index&amp;ucid=7872376&amp;type=n&amp;siteid=5697239" '
+		+'target="_blank">点击进行咨询</a>');"""
 
 def check_if_not_setup():
 	if frappe.db.sql("""select name from tabCompany"""):
