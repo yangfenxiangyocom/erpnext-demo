@@ -9,8 +9,13 @@
 	    );  
 	    return v > 4 ? v : false;
 	})();
+
+	if(ieVersion && ieVersion == 8)
+	{	
+		location.href="/assets/frappe/html/ie8.html";
+	}
 	
-	if(ieVersion && ieVersion < 9)
+	if(ieVersion && ieVersion < 8)
 	{	
 		location.href="/assets/frappe/html/noieunder9.html";
 	}
@@ -31,7 +36,7 @@
 {% endblock %}
 
 {% block title %}
-{{ _("Login") }}
+{{ _("博实ERP(可直接启动)") }}
 {% endblock %}
 
 {% block header %}{% endblock %}
